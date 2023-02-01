@@ -22,18 +22,21 @@ public class Timer : MonoBehaviour {
     void Update()
     {
         if (timerRunning && timeInSeconds > 1) {  // Keep at n > 1 so that the timer stops exactly at 00:00
-            if (timeInSeconds < 11f) { TimerColor(timeWarningColor); }
-            else { TimerColor(timerColor); }
+            if (timeInSeconds < 11f)
+            {
+                TimerColor(timeWarningColor);
+            }
+            else
+            {
+                TimerColor(timerColor);
+            }
 
-            timeInSeconds -= Time.deltaTime;
-            int minutes = Mathf.FloorToInt(timeInSeconds / 60f);
-            int seconds = Mathf.FloorToInt(timeInSeconds % 60f);
-
-            timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00"); // Changes timer text to display time
+            UpdateTimerText();
         }
+        
         if (timeInSeconds < 0.9999999f) timerText.text = "GAME OVER";
     }
-    IEnumerator RdySetGO(float time) {
+   private IEnumerator RdySetGO(float time) {
         TimerColor(getReadyColor);
         timerText.text = "Ready";
         yield return new WaitForSeconds(time);
@@ -43,7 +46,16 @@ public class Timer : MonoBehaviour {
         yield return new WaitForSeconds(time);
         timerRunning = true;
     }
-    public void TimerColor(Color32 color) {
+    private void TimerColor(Color32 color) {
         timerText.color = color;
+    }
+
+    private void UpdateTimerText()
+    {
+        timeInSeconds -= Time.deltaTime;
+        int minutes = Mathf.FloorToInt(timeInSeconds / 60f);
+        int seconds = Mathf.FloorToInt(timeInSeconds % 60f);
+
+        timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00"); // Changes timer text to display time
     }
 }
