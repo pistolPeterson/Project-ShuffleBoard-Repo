@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Random = UnityEngine.Random;
 
 /// <summary>
 /// summary?
@@ -16,6 +18,17 @@ public class ScoreSystem : MonoBehaviour
     [SerializeField] private int pointsLowerLimit = -5;
     [SerializeField] private int pointsUpperLimit = 10;
 
+    private void OnEnable()
+    {
+        ScoreCollider.OnBallCollide += UpdateScore;
+    }
+
+
+    private void OnDisable()
+    {
+        ScoreCollider.OnBallCollide -= UpdateScore;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) 
@@ -25,7 +38,7 @@ public class ScoreSystem : MonoBehaviour
         }     
     }
 
-    public void UpdateScore(int addedScore)
+    private void UpdateScore(int addedScore)
     {
         currentScore += addedScore;
         scoreText.text = "Score: " + currentScore;
