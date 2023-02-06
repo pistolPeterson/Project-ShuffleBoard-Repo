@@ -7,19 +7,18 @@ using UnityEngine;
 /// </summary>
 public class DragLine : MonoBehaviour {
     private LineRenderer lineRenderer;
-    private new Rigidbody2D rigidbody2D;
+    [SerializeField] private BallMovement ballMovement;
     [SerializeField] private Material material;
-    [SerializeField] private float startWidth = 20.0f;
-    [SerializeField] private float endWidth = 1.0f;
+    [SerializeField] private float startWidth = 1.0f;
+    [SerializeField] private float endWidth = 0.0f;
     [SerializeField] private Color startColor;
     [SerializeField] private Color endColor;
+    [SerializeField] private int sortingLayerOrder = 1;
+
+    [SerializeField] private float lineLimit = 1f;
 
     void Start()    {
-        // Gets Components and adds if object does not have them.
-        rigidbody2D = GetComponent<Rigidbody2D>();
-        if (rigidbody2D == null) {
-            rigidbody2D = gameObject.AddComponent<Rigidbody2D>();
-        }
+        // Gets Components and adds if object does not have them.        
         lineRenderer = GetComponent<LineRenderer>();
         if (lineRenderer == null) {
             lineRenderer = gameObject.AddComponent<LineRenderer>();
@@ -35,28 +34,33 @@ public class DragLine : MonoBehaviour {
         lineRenderer.endWidth = endWidth;
         lineRenderer.startColor = startColor;
         lineRenderer.endColor = endColor;
+        lineRenderer.alignment = LineAlignment.TransformZ;
+        lineRenderer.sortingOrder = sortingLayerOrder;
     }
     void Update() {
         // Initial Click
-        if (Input.GetMouseButtonDown(0)) {
-            Vector3 startPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + Vector3.forward;
-            lineRenderer.SetPosition(0, startPos); // Start Position
-            lineRenderer.SetPosition(1, startPos); // End Position
-            lineRenderer.enabled = true; // Shows drag line on click
-        }
-        // Hold / Drag
-        if (Input.GetMouseButton(0)) {
-            Vector3 endPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + Vector3.forward;
-            lineRenderer.SetPosition(1, endPos); // End Position
-        }
-        // Release
-        if (Input.GetMouseButtonUp(0)) {
-            lineRenderer.enabled = false; // Hides the drag line once released
+        if (ballMovement.moveState == MovementState.NOT_MOVING) {
+            if (Input.GetMouseButtonDown(0)) {
+                Vector3 startPos = transform.position;
+                lineRenderer.SetPosition(0, startPos); // Start Position where the ball is currently positioned
+                lineRenderer.enabled = true; // Shows drag line on click
+            }
+            // Hold / Drag
+            if (Input.GetMouseButton(0)) {
+                // ********* Need change this to have a line limit:
+                ballMovement.moveState = MovementState.DRAGGING;
+                Vector3 endPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + Vector3.forward;
+                lineRenderer.SetPosition(1, endPos); // End Position
+            }
+            // Release
+            if (Input.GetMouseButtonUp(0)) {
+                lineRenderer.enabled = false; // Hides the drag line once released
 
-            // Adds force to object
-            // If object movement is sup to be in another place, remove these lines:
-            Vector3 inputForce = lineRenderer.GetPosition(0) - lineRenderer.GetPosition(1);
-            rigidbody2D.AddForce(inputForce, ForceMode2D.Impulse);
+                // Adds force to object
+                Vector3 inputForce = lineRenderer.GetPosition(0) - lineRenderer.GetPosition(1);
+                ballMovement.inputForce = inputForce;
+                ballMovement.moveState = MovementState.MOVE;
+            }
         }
     }
    

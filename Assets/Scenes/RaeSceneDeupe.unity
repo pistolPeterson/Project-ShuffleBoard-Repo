@@ -889,11 +889,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae2afafa505612499aebadcc46f4bdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 0}
-  startWidth: 20
-  endWidth: 1
+  ballMovement: {fileID: 917796908}
+  material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  startWidth: 0.75
+  endWidth: 0
   startColor: {r: 0.6820927, g: 0.29236382, b: 0.8490566, a: 1}
-  endColor: {r: 0.375534, g: 0.8224261, b: 0.9150943, a: 0.61960787}
+  endColor: {r: 0.375534, g: 0.8224261, b: 0.9150943, a: 1}
+  sortingLayerOrder: 1
+  lineLimit: 5
+--- !u!114 &917796908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917796906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e951bffff758844488580d2ec4bb75f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forcePower: 1.01
+  inputForce: {x: 0, y: 0, z: 0}
+  moveState: 0
 --- !u!1 &941051874
 GameObject:
   m_ObjectHideFlags: 0
