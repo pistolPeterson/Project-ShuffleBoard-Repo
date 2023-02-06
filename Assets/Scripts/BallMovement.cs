@@ -9,6 +9,7 @@ public class BallMovement : MonoBehaviour   {
     [HideInInspector] public Vector3 inputForce;
 
     [HideInInspector] public MovementState moveState = MovementState.NOT_MOVING;
+    [SerializeField] private float minimumSpeed = 5.0f;
 
     void Start() {
         // Gets Components and adds if object does not have them.
@@ -24,10 +25,10 @@ public class BallMovement : MonoBehaviour   {
             rigidbody2D.AddForce((inputForce * forcePower), ForceMode2D.Impulse);
             moveState = MovementState.MOVING;
         }
-        if (speed > 5.0f) {
+        if (speed > minimumSpeed) {
             moveState = MovementState.MOVING;
         }
-        if (speed < 5.0f && moveState != MovementState.NOT_MOVING) {
+        if (speed < minimumSpeed && moveState != MovementState.NOT_MOVING) {
             moveState = MovementState.NOT_MOVING;
         }
     }
