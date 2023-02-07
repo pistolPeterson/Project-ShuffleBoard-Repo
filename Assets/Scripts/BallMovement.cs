@@ -4,38 +4,41 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour   {
 
-    private new Rigidbody2D rigidbody2D;
-    [SerializeField] float forcePower = 1.01f;
-    [HideInInspector] public Vector3 inputForce;
+    private Rigidbody2D rigidbody2D;
+    [SerializeField][Range(0.5f, 2.0f)] float forcePower = 1.01f;
 
-    [HideInInspector] public MovementState moveState = MovementState.NOT_MOVING;
-    [SerializeField] private float minimumSpeed = 5.0f;
+    public MovementState moveState = MovementState.NOT_MOVING;
+    [SerializeField] private float minVelocity = 5.0f;
 
-    void Start() {
-        // Gets Components and adds if object does not have them.
+     private float ballVelocity; 
+    void Start() 
+    {
         rigidbody2D = GetComponent<Rigidbody2D>();
-        if (rigidbody2D == null) {
-            rigidbody2D = gameObject.AddComponent<Rigidbody2D>();
-        }
     }
 
     void Update() {
-        float speed = rigidbody2D.velocity.magnitude;
-        if (moveState == MovementState.MOVE) {
-            rigidbody2D.AddForce((inputForce * forcePower), ForceMode2D.Impulse);
-            moveState = MovementState.MOVING;
-        }
-        if (speed > minimumSpeed) {
-            moveState = MovementState.MOVING;
-        }
-        if (speed < minimumSpeed && moveState != MovementState.NOT_MOVING) {
-            moveState = MovementState.NOT_MOVING;
-        }
+        ballVelocity = rigidbody2D.velocity.magnitude;
+       
+       if (moveState == MovementState.MOVING)
+       {
+           if (ballVelocity < minVelocity ) 
+           {
+               moveState = MovementState.NOT_MOVING;
+               Debug.Log("not moving bruv");
+               //now update score, refactor to be cleaner, make ScoreSystem a singleton 
+               FindObjectOfType<ScoreSystem>().UpdateScore();
+           }
+       }
+        
+    }
+
+    public void MoveBall(Vector3 newInputForce)
+    {
+        rigidbody2D.AddForce((newInputForce * forcePower), ForceMode2D.Impulse);
+        moveState = MovementState.MOVING;
     }
 }
 public enum MovementState {
     NOT_MOVING,
-    DRAGGING,
-    MOVE,
     MOVING
 }

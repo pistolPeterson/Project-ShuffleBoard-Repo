@@ -14,12 +14,22 @@ public class ScoreCollider : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         if(!col.gameObject.CompareTag("Ball")) return;
-        OnBallCollide?.Invoke(scoreAmount);
+        //OnBallCollide?.Invoke(scoreAmount);
+        BallValue ballValue = col.gameObject.GetComponent<BallValue>();
+        if(ballValue)
+            ballValue.SetBallValue(scoreAmount);
+        
+        Debug.Break();
+
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
         if(!col.gameObject.CompareTag("Ball")) return;
-        OnBallCollide?.Invoke(-scoreAmount);
+       // OnBallCollide?.Invoke(-scoreAmount);
+       BallValue ballValue = col.gameObject.GetComponent<BallValue>();
+       if(ballValue)
+           ballValue.SetBallValue(0);
+       Debug.Break();
     }
 }

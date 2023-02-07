@@ -15,8 +15,7 @@ public class ScoreSystem : MonoBehaviour
     //remove the testing stuff 
     private int currentScore = 0;
     [SerializeField] private TMP_Text scoreText;
-    [SerializeField] private int pointsLowerLimit = -5;
-    [SerializeField] private int pointsUpperLimit = 10;
+    
 
     private void OnEnable()
     {
@@ -29,18 +28,30 @@ public class ScoreSystem : MonoBehaviour
         ScoreCollider.OnBallCollide -= UpdateScore;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) 
-        {
-           int randomScore = Random.Range(pointsLowerLimit, pointsUpperLimit);
-           UpdateScore(randomScore);   
-        }     
-    }
-
+   
+    //original way of updating score 
+    //anytime ball passed collider, the score would change 
     private void UpdateScore(int addedScore)
     {
         currentScore += addedScore;
         scoreText.text = "Score: " + currentScore;
+    }
+
+    //new way of updating score as per Raeus request in all her infinite game design knowledge 
+    //score only updates when balls arent moving
+    public void UpdateScore()
+    {
+        Debug.Log("doing new updated score");
+        //currently a hacky way to do it, will refactor to improve a more optimize way 
+        BallValue[] urMouth = FindObjectsOfType<BallValue>();
+
+        int updatedScore = 0;
+
+        foreach (var deezNuts in urMouth)
+        {
+            updatedScore += deezNuts.GetBallValue();
+        }
+        
+        scoreText.text = "Score: " + updatedScore;
     }
 }
