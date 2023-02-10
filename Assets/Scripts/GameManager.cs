@@ -63,14 +63,16 @@ public class GameManager : MonoBehaviour {
     }
     public void BallState(GameObject go) {
         if (go == currentBall) {
+            ballsShot.Add(currentBall);
+            DeactivateBalls();
             SpawnBall();
         }
     }
     public void SpawnBall() {
-        ballsShot.Add(currentBall);
-        DeactivateBalls();
+        
         currentBall = Instantiate(spawnBallPref, spawnPos.transform.position, Quaternion.identity);
-
+        currentBall.GetComponent<BallValue>().Init();
+        
         SpriteRenderer sr = currentBall.GetComponent<SpriteRenderer>();
         sr.color = defaultBallColor;
     }

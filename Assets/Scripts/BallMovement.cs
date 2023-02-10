@@ -30,6 +30,8 @@ public class BallMovement : MonoBehaviour   {
                 if (!gameStarted) return;
                 if (moveState == MovementState.CHANGING) {
                     FindObjectOfType<GameManager>().BallState(gameObject);
+                    GetComponent<BallValue>().DetermineScore();
+                    GetComponent<BallValue>().CallUpdateScore();
                 }
                 moveState = MovementState.NOT_MOVING;
 
@@ -42,7 +44,18 @@ public class BallMovement : MonoBehaviour   {
         rb2d.AddForce((newInputForce * forcePower), ForceMode2D.Impulse);
         moveState = MovementState.MOVING;
     }
+    
+  
+    
+    //when you enter a trigger
+    
 }
+//state machine
+// moving state: if ballvel is less than the min than go to changing
+//changing: do one frame of logic then go to not moving 
+//not moving: if velocity changes go to moving 
+
+
 public enum MovementState {
     NOT_MOVING,
     MOVING,
