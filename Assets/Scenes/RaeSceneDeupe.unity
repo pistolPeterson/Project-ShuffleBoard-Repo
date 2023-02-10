@@ -904,7 +904,6 @@ MonoBehaviour:
   startColor: {r: 0.6820927, g: 0.29236382, b: 0.8490566, a: 1}
   endColor: {r: 0.375534, g: 0.8224261, b: 0.9150943, a: 1}
   sortingLayerOrder: 1
-  lineLimit: 5
 --- !u!114 &917796908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1125,7 +1124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getReadyInterval: 1
-  timeInSeconds: 15
+  timeInSeconds: 30
   timerText: {fileID: 1671095903}
   getReadyColor:
     serializedVersion: 2
@@ -1149,6 +1148,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 2041550423}
+--- !u!1 &1018416148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1018416149}
+  m_Layer: 0
+  m_Name: SpawnPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1018416149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018416148}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -850, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1057866584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,6 +1960,65 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreAmount: 100
+--- !u!1 &1916350841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1916350842}
+  - component: {fileID: 1916350843}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1916350842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916350841}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.486387, y: -0.25995064, z: -2.317615}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1916350843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916350841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1bb214f7184f3459669a2b54abb180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 993113322}
+  ballMovement: {fileID: 917796908}
+  gameStart: 0
+  OnGameOver:
+    m_PersistentCalls:
+      m_Calls: []
+  spawnPos: {fileID: 1018416148}
+  ballsShot: []
+  spawnBallPref: {fileID: 917796906}
+  defaultBallColor:
+    serializedVersion: 2
+    rgba: 4288531607
+  ballStopColor:
+    serializedVersion: 2
+    rgba: 4289999483
 --- !u!1 &2041550421
 GameObject:
   m_ObjectHideFlags: 0

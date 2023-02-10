@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour {
     [SerializeField] private float timeInSeconds = 70f;
     [SerializeField] private TMP_Text timerText;
     private bool timerRunning = false;
+    private bool gameOver = false;
 
     // UI stuf : COLORS INITIALIZED ARE DEFAULT. Can be changed in inspector
     [SerializeField] private Color32 getReadyColor = new Color32(125, 205, 209, 255);
@@ -18,6 +19,7 @@ public class Timer : MonoBehaviour {
     void Start() {
         StartCoroutine(RdySetGO(getReadyInterval));
         timeInSeconds += 1f;
+        gameOver = false;
     }
     void Update()
     {
@@ -33,8 +35,11 @@ public class Timer : MonoBehaviour {
 
             UpdateTimerText();
         }
-        
-        if (timeInSeconds < 0.9999999f) timerText.text = "GAME OVER";
+
+        if (timeInSeconds < 0.9999999f && !gameOver) {
+            timerText.text = "GAME OVER";
+            gameOver = true;
+        }
     }
    private IEnumerator RdySetGO(float time) {
         TimerColor(getReadyColor);
@@ -57,5 +62,11 @@ public class Timer : MonoBehaviour {
         int seconds = Mathf.FloorToInt(timeInSeconds % 60f);
 
         timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00"); // Changes timer text to display time
+    }
+    public bool GetTimerRunning() {
+        return timerRunning;
+    }
+    public void GameOverAlert() {
+        FindObjectOfType<GameManager>().PostGameOverEvent();        
     }
 }

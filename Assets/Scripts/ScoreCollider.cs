@@ -34,7 +34,7 @@ public class ScoreCollider : MonoBehaviour
         }
         else
         {
-            Debug.Log("mf ball isnt inside");
+        //    Debug.Log("mf ball isnt inside");
         }
     }
 
