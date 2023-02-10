@@ -15,7 +15,7 @@ public class DragLine : MonoBehaviour {
     [SerializeField] private Color endColor;
     [SerializeField] private int sortingLayerOrder = 1;
 
-    [SerializeField] private float lineLimit = 300f;
+   // [SerializeField] private float lineLimit = 300f;
 
     void Start()    {
         // Gets Components and adds if object does not have them.        

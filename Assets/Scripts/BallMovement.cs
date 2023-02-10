@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour   {
 
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody2D rb2d;
     [SerializeField][Range(0.5f, 2.0f)] float forcePower = 1.01f;
 
     public MovementState moveState = MovementState.NOT_MOVING;
@@ -13,30 +13,32 @@ public class BallMovement : MonoBehaviour   {
      private float ballVelocity; 
     void Start() 
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
     void Update() {
-        ballVelocity = rigidbody2D.velocity.magnitude;
+       
+        ballVelocity = rb2d.velocity.magnitude;
        
        if (moveState == MovementState.MOVING)
        {
            if (ballVelocity < minVelocity ) 
            {
                moveState = MovementState.NOT_MOVING;
-               Debug.Log("not moving bruv");
-               //now update score, refactor to be cleaner, make ScoreSystem a singleton 
-               FindObjectOfType<ScoreSystem>().UpdateScore();
+               //now update score, refactor to be cleaner, make ScoreSystem a singleton
            }
-       }
+       } 
         
     }
 
     public void MoveBall(Vector3 newInputForce)
     {
-        rigidbody2D.AddForce((newInputForce * forcePower), ForceMode2D.Impulse);
+        rb2d.AddForce((newInputForce * forcePower), ForceMode2D.Impulse);
         moveState = MovementState.MOVING;
     }
+    
+    
+    
 }
 public enum MovementState {
     NOT_MOVING,

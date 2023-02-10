@@ -19,13 +19,13 @@ public class ScoreSystem : MonoBehaviour
 
     private void OnEnable()
     {
-        ScoreCollider.OnBallCollide += UpdateScore;
+      //  ScoreCollider.OnBallCollide += UpdateScore;
     }
 
 
     private void OnDisable()
     {
-        ScoreCollider.OnBallCollide -= UpdateScore;
+       // ScoreCollider.OnBallCollide -= UpdateScore;
     }
 
    
