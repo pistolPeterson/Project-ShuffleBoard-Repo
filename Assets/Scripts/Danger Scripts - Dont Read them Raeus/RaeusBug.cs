@@ -14,7 +14,6 @@ public class RaeusBug : MonoBehaviour
     private float powerScale = 01.01f;
     void Start()
     {
-
         Init();
     }
 
@@ -24,17 +23,20 @@ public class RaeusBug : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > 2.0f)
+        if (timer > 3.0f)
         {
             Init();
             timer = 0;
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (powerScale > 3.0f) {
+            powerScale = 1.01f;
+        }
+        /*if (Input.GetKeyDown(KeyCode.D))
         {
             if(Random.Range(0, 100) > 50)
                 Instantiate(this.gameObject);
-        }
+        }*/
     }
 
     void Init()
@@ -44,7 +46,7 @@ public class RaeusBug : MonoBehaviour
 
         powerScale += 0.420f;
         //random boost amount
-        float randomPower = Random.Range(25.1f, 100f);
+        float randomPower = Random.Range(5f, 20f);
         
         //apply the force on the rigid body
         var rb = GetComponent<Rigidbody2D>();

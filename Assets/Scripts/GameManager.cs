@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] private Timer timer;
     [SerializeField] private BallMovement ballMovement;
-    public bool gameStart = false;
+    [HideInInspector] public bool gameStart = false;
     public UnityEvent OnGameOver;
 
     [SerializeField] private GameObject spawnPos;
@@ -53,6 +53,11 @@ public class GameManager : MonoBehaviour {
          * stop ball --> set velocity to zero
          * 
          */
+        BallMovement[] allBall = FindObjectsOfType<BallMovement>();
+        foreach (BallMovement go in allBall) {
+            go.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
+        Debug.Log("Stopped.");
     }
     public void FinalScore() {
         Debug.Log("Final Score");

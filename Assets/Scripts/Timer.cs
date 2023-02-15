@@ -39,7 +39,7 @@ public class Timer : MonoBehaviour {
         if (timeInSeconds < 0.9999999f && !gameOver) {
             timerText.text = "GAME OVER";
             gameOver = true;
-        }
+        }              
     }
    private IEnumerator RdySetGO(float time) {
         TimerColor(getReadyColor);
