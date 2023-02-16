@@ -38,6 +38,7 @@ public class Timer : MonoBehaviour {
 
         if (timeInSeconds < 0.9999999f && !gameOver) {
             timerText.text = "GAME OVER";
+            GameOverAlert();
             gameOver = true;
         }              
     }
@@ -66,7 +67,7 @@ public class Timer : MonoBehaviour {
     public bool GetTimerRunning() {
         return timerRunning;
     }
-    public void GameOverAlert() {
+    private void GameOverAlert() {
         FindObjectOfType<GameManager>().PostGameOverEvent();        
     }
 }

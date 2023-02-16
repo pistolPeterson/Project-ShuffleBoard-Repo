@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private Color32 defaultBallColor;
     [SerializeField] private Color32 ballStopColor;
 
+    //the current level number that the player is on, statistics system uses it to write stats 
+    public int CurrentLevelNumber = 1;
+
     // Start is called before the first frame update
     void Start()    {
         isGameStarted = false;
