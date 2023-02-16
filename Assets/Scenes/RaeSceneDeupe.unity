@@ -207,7 +207,7 @@ Transform:
   - {fileID: 1855928774}
   - {fileID: 1332341691}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &111048848
 GameObject:
@@ -369,7 +369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &431505985
 Rigidbody2D:
   serializedVersion: 4
@@ -913,6 +913,71 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!1001 &846426143
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5613303569798236081, guid: 62267cb18adf92b4daa0a8e2e4cdc739, type: 3}
+      propertyPath: m_Name
+      value: ForceObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613303569798236108, guid: 62267cb18adf92b4daa0a8e2e4cdc739, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613303569798236108, guid: 62267cb18adf92b4daa0a8e2e4cdc739, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -286
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613303569798236108, guid: 62267cb18adf92b4daa0a8e2e4cdc739, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -321
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613303569798236108, guid: 62267cb18adf92b4daa0a8e2e4cdc739, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613303569798236108, guid: 62267cb18adf92b4daa0a8e2e4cdc739, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9615167
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613303569798236108, guid: 62267cb18adf92b4daa0a8e2e4cdc739, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613303569798236108, guid: 62267cb18adf92b4daa0a8e2e4cdc739, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613303569798236108, guid: 62267cb18adf92b4daa0a8e2e4cdc739, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.27474666
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613303569798236108, guid: 62267cb18adf92b4daa0a8e2e4cdc739, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613303569798236108, guid: 62267cb18adf92b4daa0a8e2e4cdc739, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613303569798236108, guid: 62267cb18adf92b4daa0a8e2e4cdc739, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 31.894
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613303569798236110, guid: 62267cb18adf92b4daa0a8e2e4cdc739, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705457190848294287, guid: 62267cb18adf92b4daa0a8e2e4cdc739, type: 3}
+      propertyPath: forcePower
+      value: 72090
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 62267cb18adf92b4daa0a8e2e4cdc739, type: 3}
 --- !u!1 &848285036
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,7 +1146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 779032333824990205, guid: b40a162aea9ba5f49946d89d45ec0b02, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 779032333824990205, guid: b40a162aea9ba5f49946d89d45ec0b02, type: 3}
       propertyPath: m_LocalScale.x
@@ -2383,7 +2448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 993113322}
   ballMovement: {fileID: 917796908}
-  gameStart: 0
+  isGameStarted: 0
   OnGameOver:
     m_PersistentCalls:
       m_Calls:
@@ -2399,6 +2464,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnBallSpawn:
+    m_PersistentCalls:
+      m_Calls: []
   spawnPos: {fileID: 1018416148}
   ballsShot: []
   spawnBallPref: {fileID: 917796906}
@@ -2562,7 +2630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &779032333572309706
 Transform:
   m_ObjectHideFlags: 0

@@ -64,12 +64,9 @@ public class DataCollection : MonoBehaviour
 
     private void UpdateData()
     {
-
         SetInt(AMOUNT_OF_BALLS_SPAWNED_KEY, GetInt(AMOUNT_OF_BALLS_SPAWNED_KEY) + 1);
-
         SetFloat(TOTAL_TIME_KEY, GetFloat(TOTAL_TIME_KEY) + timer);
         timer = 0.0f;
-
     }
 
    
