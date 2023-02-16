@@ -10,6 +10,7 @@ public class ForceObstacle : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
+    return;
         if (!other.GetComponent<BallMovement>()) return;
         float distanceToBall = Vector3.Distance(transform.position, other.gameObject.transform.position);
 
