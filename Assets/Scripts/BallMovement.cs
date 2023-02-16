@@ -26,7 +26,7 @@ public class BallMovement : MonoBehaviour   {
        {
            if (ballVelocity < minVelocity) 
            {
-                var gameStarted = FindObjectOfType<GameManager>().gameStart;
+                var gameStarted = FindObjectOfType<GameManager>().isGameStarted;
                 if (!gameStarted) return;
                 if (moveState == MovementState.CHANGING) {
                     FindObjectOfType<GameManager>().BallState(gameObject);

@@ -22,7 +22,6 @@ public class ScoreSystem : MonoBehaviour
     {
         //currently a hacky way to do it, will refactor to improve a more optimized way 
         BallValue[] ballsInScene = FindObjectsOfType<BallValue>();
-        Debug.Log("There are " + ballsInScene.Length + " balls in the scene rigght now");
         int updatedScore = 0;
 
         foreach (var ball in ballsInScene)

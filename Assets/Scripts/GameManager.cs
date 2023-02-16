@@ -16,9 +16,9 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] private Timer timer;
     [SerializeField] private BallMovement ballMovement;
-    [HideInInspector] public bool gameStart = false;
+    [HideInInspector] public bool isGameStarted = false;
     public UnityEvent OnGameOver;
-
+    public UnityEvent OnBallSpawn;
     [SerializeField] private GameObject spawnPos;
     [SerializeField] private List<GameObject> ballsShot = new List<GameObject>();
     [SerializeField] private GameObject spawnBallPref;
@@ -28,23 +28,24 @@ public class GameManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start()    {
-        gameStart = false;
+        isGameStarted = false;
         currentBall = spawnBallPref;
     }
 
     // Update is called once per frame
     void Update() {
-        if (timer.GetTimerRunning() && !gameStart) {
+        if (timer.GetTimerRunning() && !isGameStarted) {
             ballMovement.moveState = MovementState.MOVING; 
             // if in MOVING state, IT CANNOT BE MOVED AGAIN. IF STAtE IS NOT_MOVING MEAN IT CAN BE MOVED.
             // in DragLine ^
-            gameStart = true;
+            isGameStarted = true;
         }
     }
     public void PostGameOverEvent() {
         OnGameOver?.Invoke();
         StopBall();
         FinalScore();
+        isGameStarted = false;
     }
     public void StopBall() {
         Debug.Log("Stop");
@@ -80,6 +81,7 @@ public class GameManager : MonoBehaviour {
         
         SpriteRenderer sr = currentBall.GetComponent<SpriteRenderer>();
         sr.color = defaultBallColor;
+        OnBallSpawn?.Invoke();
     }
     public void DeactivateBalls() {
         foreach(GameObject go in ballsShot) {
