@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour {
     void Update() {
         if (timer.GetTimerRunning() && !isGameStarted) {
             ballMovement.moveState = MovementState.MOVING; 
-            // if in MOVING state, IT CANNOT BE MOVED AGAIN. IF STAtE IS NOT_MOVING MEAN IT CAN BE MOVED.
+            // if in MOVING state, IT CANNOT BE MOVED AGAIN. IF STAtE IS NOT_MOVING MEANS IT CAN BE MOVED.
             // in DragLine ^
             isGameStarted = true;
         }
@@ -51,17 +51,14 @@ public class GameManager : MonoBehaviour {
         isGameStarted = false;
     }
     public void StopBall() {
-        Debug.Log("Stop");
         /*
          * find all ball
-         * stop ball --> set velocity to zero
-         * 
+         * stop ball --> set velocity to zero 
          */
         BallMovement[] allBall = FindObjectsOfType<BallMovement>();
         foreach (BallMovement go in allBall) {
-            go.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            go.gameObject.GetComponent<DragLine>().IsActive = false;
         }
-        Debug.Log("Stopped.");
     }
     public void FinalScore() {
         Debug.Log("Final Score");

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class BallMovement : MonoBehaviour   {
 
     private Rigidbody2D rb2d;
-    [SerializeField][Range(0.5f, 2.0f)] float forcePower = 1.01f;
+    [SerializeField][Range(0.5f, 3.0f)] float forcePower = 1.01f;
 
     public MovementState moveState;
     [SerializeField] private float minVelocity = 5.0f;
