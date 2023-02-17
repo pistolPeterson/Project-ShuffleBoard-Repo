@@ -9,48 +9,47 @@ public class ScoreCollider : MonoBehaviour
 {
     [SerializeField] private int scoreAmount = 10;
 
+    [SerializeField] private Transform scoreColMidPoint;
     //public static event Action<int> OnBallCollide;
-  
+
+
+    private void Start()
+    {
+        if (scoreColMidPoint == null)
+        {
+            Debug.Log("there is not a midpoint gameobject as a child of this object");
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if(!col.gameObject.CompareTag("Ball")) return;
         BallValue ballValue = col.gameObject.GetComponent<BallValue>();
-        if(ballValue)
-            ballValue.SetBallValue(scoreAmount);
+       
+        ballValue.scoreColliders.Add(this);
+      
 
-
-    }
-
-    private void OnTriggerStay2D(Collider2D col)
-    {
-        
-        
-        if(!col.gameObject.CompareTag("Ball")) return;
-        BallValue ballValue = col.gameObject.GetComponent<BallValue>();
-        
-        if (IsInside(GetComponent<Collider2D>(), col.gameObject.transform.position))
-        {
-            
-        }
-        else
-        {
-            Debug.Log("mf ball isnt inside");
-        }
     }
 
     private void OnTriggerExit2D(Collider2D col)
-    {
+    { 
         if(!col.gameObject.CompareTag("Ball")) return;
-       // OnBallCollide?.Invoke(-scoreAmount);
-       BallValue ballValue = col.gameObject.GetComponent<BallValue>();
-       if(ballValue)
-           ballValue.SetBallValue(0);
+        BallValue ballValue = col.gameObject.GetComponent<BallValue>();
+
+        if (ballValue.scoreColliders.Count > 0)
+        {
+            ballValue.scoreColliders.RemoveAt(0);
+        }
+
     }
-    public static bool IsInside(Collider2D c, Vector3 point)
+
+    public int GetScoreColliderValue()
     {
-        Vector3 closest = c.ClosestPoint(point);
-        // Because closest=point if point is inside - not clear from docs I feel
-        return closest == point;
+        return scoreAmount;
     }
-    
+
+    public Vector3 GetMidPointWorldPos()
+    {
+        return scoreColMidPoint.position;
+    }
 }

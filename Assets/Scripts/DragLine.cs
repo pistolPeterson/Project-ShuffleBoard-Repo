@@ -14,11 +14,12 @@ public class DragLine : MonoBehaviour {
     [SerializeField] private Color startColor;
     [SerializeField] private Color endColor;
     [SerializeField] private int sortingLayerOrder = 1;
-
+    public bool IsActive { get; set; }
    // [SerializeField] private float lineLimit = 300f;
 
     void Start()    {
-        // Gets Components and adds if object does not have them.        
+        // Gets Components and adds if object does not have them.
+        IsActive = true;
         lineRenderer = GetComponent<LineRenderer>();
         ballMovement = GetComponent<BallMovement>();
         if (lineRenderer == null) {
@@ -29,15 +30,12 @@ public class DragLine : MonoBehaviour {
         {
             Debug.Log("There is no BallMovement script on thtis gameobject!");
         }
-
-        
         LineRendererInit();
     }
 
-  
-
     void Update() {
         // Initial Click
+        if (!IsActive) return;
         if (ballMovement.moveState == MovementState.NOT_MOVING) {
             
             if (Input.GetMouseButtonDown(0)) {
@@ -58,14 +56,10 @@ public class DragLine : MonoBehaviour {
                 // Adds force to object
                 Vector3 inputForce = lineRenderer.GetPosition(0) - lineRenderer.GetPosition(1);
                 ballMovement.MoveBall(inputForce);
-             
+                ballMovement.moveState = MovementState.CHANGING;
             }
         }
-        
     }
-
-   
-   
     private void LineRendererInit()
     {
         // LineRenderer properties
