@@ -22,10 +22,20 @@ public class RaeusBOMB : MonoBehaviour
 
   private bool raeusGoingThroughIt = false;
 
+  private bool openState = false;
   private void Start()
   {
-    particles.gameObject.SetActive(false);
 
+  }
+
+
+  private void Update()
+  {
+    if (Input.GetKeyDown(KeyCode.Space))
+    {
+      openState = !openState;
+      particles.gameObject.SetActive(openState);
+    }
   }
 
   private void OnCollisionEnter2D(Collision2D collision)
@@ -33,7 +43,7 @@ public class RaeusBOMB : MonoBehaviour
     if (collision.gameObject.GetComponent<BallMovement>() && !raeusGoingThroughIt)
     {
       raeusGoingThroughIt = true;
-      Debug.Log("Raeus: I must fufill my duty I MUST EXPLODE!!!");
+      //Debug.Log("Raeus: I must fufill my duty I MUST EXPLODE!!!");
       StartCoroutine(DelayThenExplode());
     }
   }
@@ -46,13 +56,12 @@ public class RaeusBOMB : MonoBehaviour
     //play particle effect to show it respawning 
     //show ball 
     raeusGoingThroughIt = false;
-    particles.gameObject.SetActive(false);
 
   }
 
   private void RaeusExplodes()
   {
-    Debug.Log("Raeus: I EXPLODED!!! ");
+   // Debug.Log("Raeus: I EXPLODED!!! ");
     hitColliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
 
     foreach (Collider2D col in hitColliders)
@@ -68,12 +77,10 @@ public class RaeusBOMB : MonoBehaviour
         float explosionForce = explosionPower / distanceVector.magnitude;
         var rb = col.gameObject.GetComponent<Rigidbody2D>();
         if(!rb) return;
-        Debug.Log("exploding");
         rb.AddForce(distanceVector.normalized * explosionPower);
 
 
     }
-    particles.gameObject.SetActive(true);
 
   }
 
