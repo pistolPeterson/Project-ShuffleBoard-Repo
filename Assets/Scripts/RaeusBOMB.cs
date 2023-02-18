@@ -3,6 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// war crimes were commited by Rae Industries
+///
+///
+/// Peterson N. : they threatened to kill me I had to make this monstrosity
+/// 
+/// </summary>
 public class RaeusBOMB : MonoBehaviour
 {
   private Collider2D[] hitColliders = null;
