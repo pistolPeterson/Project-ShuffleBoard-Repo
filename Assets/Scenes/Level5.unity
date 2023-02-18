@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &48669783
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -351,6 +351,63 @@ Transform:
   m_Father: {fileID: 1162438964}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &445195676
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2817295539395888402, guid: 1c7338ddd898d794fb4f4f3556ad3a79, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817295539395888402, guid: 1c7338ddd898d794fb4f4f3556ad3a79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817295539395888402, guid: 1c7338ddd898d794fb4f4f3556ad3a79, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817295539395888402, guid: 1c7338ddd898d794fb4f4f3556ad3a79, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817295539395888402, guid: 1c7338ddd898d794fb4f4f3556ad3a79, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817295539395888402, guid: 1c7338ddd898d794fb4f4f3556ad3a79, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817295539395888402, guid: 1c7338ddd898d794fb4f4f3556ad3a79, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817295539395888402, guid: 1c7338ddd898d794fb4f4f3556ad3a79, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817295539395888402, guid: 1c7338ddd898d794fb4f4f3556ad3a79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817295539395888402, guid: 1c7338ddd898d794fb4f4f3556ad3a79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817295539395888402, guid: 1c7338ddd898d794fb4f4f3556ad3a79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817295539395888412, guid: 1c7338ddd898d794fb4f4f3556ad3a79, type: 3}
+      propertyPath: m_Name
+      value: Board (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1c7338ddd898d794fb4f4f3556ad3a79, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreAmount: -100
   scoreColMidPoint: {fileID: 721863652}
+  scoreColliderText: {fileID: 0}
 --- !u!1 &716208112
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,6 +727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreAmount: 80
   scoreColMidPoint: {fileID: 111048849}
+  scoreColliderText: {fileID: 0}
 --- !u!1 &721863651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,6 +1199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreAmount: 70
   scoreColMidPoint: {fileID: 1191711481}
+  scoreColliderText: {fileID: 0}
 --- !u!1 &993113317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,6 +1533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreAmount: 80
   scoreColMidPoint: {fileID: 429412225}
+  scoreColliderText: {fileID: 0}
 --- !u!1 &1166114483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1761,6 +1822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreAmount: 70
   scoreColMidPoint: {fileID: 1204222022}
+  scoreColliderText: {fileID: 0}
 --- !u!1 &1514298537
 GameObject:
   m_ObjectHideFlags: 0
@@ -2205,6 +2267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreAmount: 100
   scoreColMidPoint: {fileID: 848285037}
+  scoreColliderText: {fileID: 0}
 --- !u!1 &1916350841
 GameObject:
   m_ObjectHideFlags: 0
@@ -2254,6 +2317,7 @@ MonoBehaviour:
   timer: {fileID: 993113322}
   ballMovement: {fileID: 917796908}
   isGameStarted: 0
+  gameOver: 0
   OnGameOver:
     m_PersistentCalls:
       m_Calls: []
