@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 /// <summary>
 /// The collision system, that will update the score when the balls pass through it using events
@@ -11,13 +12,19 @@ public class ScoreCollider : MonoBehaviour
 
     [SerializeField] private Transform scoreColMidPoint;
     //public static event Action<int> OnBallCollide;
-
+    [SerializeField] private TextMeshProUGUI scoreColliderText;
 
     private void Start()
     {
         if (scoreColMidPoint == null)
         {
             Debug.Log("there is not a midpoint gameobject as a child of this object");
+        }
+
+      
+        if (scoreColliderText)
+        {
+            scoreColliderText.text = scoreAmount.ToString();
         }
     }
 
@@ -26,6 +33,8 @@ public class ScoreCollider : MonoBehaviour
         if(!col.gameObject.CompareTag("Ball")) return;
         BallValue ballValue = col.gameObject.GetComponent<BallValue>();
        
+
+        if(ballValue)
         ballValue.scoreColliders.Add(this);
       
 

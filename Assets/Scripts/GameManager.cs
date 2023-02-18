@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private Timer timer;
     [SerializeField] private BallMovement ballMovement;
     [HideInInspector] public bool isGameStarted = false;
+    [HideInInspector] public bool gameOver = false;
     public UnityEvent OnGameOver;
     public UnityEvent OnBallSpawn;
     [SerializeField] private GameObject spawnPos;
@@ -43,12 +44,16 @@ public class GameManager : MonoBehaviour {
             // in DragLine ^
             isGameStarted = true;
         }
+        if (gameOver) {
+            StopBall();
+        }
     }
     public void PostGameOverEvent() {
         OnGameOver?.Invoke();
         StopBall();
         FinalScore();
         isGameStarted = false;
+        gameOver = true;
     }
     public void StopBall() {
         /*

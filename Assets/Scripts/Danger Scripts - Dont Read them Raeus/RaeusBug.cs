@@ -11,14 +11,12 @@ using Random = UnityEngine.Random;
 public class RaeusBug : MonoBehaviour
 {
     private float timer = 0;
-    private float powerScale = 01.01f;
+    public float powerScale = 01.01f;
+    public float maxPower = 5.0f;
     void Start()
     {
         Init();
     }
-
-   
-
     private void Update()
     {
         timer += Time.deltaTime;
@@ -29,14 +27,9 @@ public class RaeusBug : MonoBehaviour
             timer = 0;
         }
 
-        if (powerScale > 3.0f) {
+        if (powerScale > maxPower) {
             powerScale = 1.01f;
         }
-        /*if (Input.GetKeyDown(KeyCode.D))
-        {
-            if(Random.Range(0, 100) > 50)
-                Instantiate(this.gameObject);
-        }*/
     }
 
     void Init()
