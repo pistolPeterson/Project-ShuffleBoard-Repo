@@ -1904,6 +1904,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2817295538299068409, guid: 1c7338ddd898d794fb4f4f3556ad3a79,
+        type: 3}
+      propertyPath: m_TagString
+      value: BoardBoundary
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817295539297235923, guid: 1c7338ddd898d794fb4f4f3556ad3a79,
+        type: 3}
+      propertyPath: m_TagString
+      value: BoardBoundary
+      objectReference: {fileID: 0}
     - target: {fileID: 2817295539395888402, guid: 1c7338ddd898d794fb4f4f3556ad3a79,
         type: 3}
       propertyPath: m_RootOrder
@@ -1963,6 +1973,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Board (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817295539814259653, guid: 1c7338ddd898d794fb4f4f3556ad3a79,
+        type: 3}
+      propertyPath: m_TagString
+      value: BoardBoundary
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817295539975654670, guid: 1c7338ddd898d794fb4f4f3556ad3a79,
+        type: 3}
+      propertyPath: m_TagString
+      value: BoardBoundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c7338ddd898d794fb4f4f3556ad3a79, type: 3}

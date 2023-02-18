@@ -18,24 +18,20 @@ public class RaeusBOMB : MonoBehaviour
   [SerializeField][Range(75f, 750f)] private float explosionRadius = 200f;
   [SerializeField] private float explosionDelay = 2.5f;
   [SerializeField] private float respawnDelay = 2.5f;
-  [SerializeField] private GameObject particles; 
+  [SerializeField] private ParticleSystem particles; 
 
   private bool raeusGoingThroughIt = false;
 
-  private bool openState = false;
   private void Start()
   {
-
+    particles = GetComponentInChildren<ParticleSystem>();
+    particles.Stop();
   }
 
 
   private void Update()
   {
-    if (Input.GetKeyDown(KeyCode.Space))
-    {
-      openState = !openState;
-      particles.gameObject.SetActive(openState);
-    }
+   
   }
 
   private void OnCollisionEnter2D(Collision2D collision)
@@ -56,12 +52,14 @@ public class RaeusBOMB : MonoBehaviour
     //play particle effect to show it respawning 
     //show ball 
     raeusGoingThroughIt = false;
-
+    particles.Stop();
   }
 
   private void RaeusExplodes()
   {
    // Debug.Log("Raeus: I EXPLODED!!! ");
+   particles.Emit(100);
+
     hitColliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
 
     foreach (Collider2D col in hitColliders)
