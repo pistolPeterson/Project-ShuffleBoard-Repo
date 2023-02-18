@@ -12,14 +12,14 @@ TagManager:
   - 
   - Water
   - UI
+  - ball
   - 
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - canvas
+  - obstacles
+  - obstacleBounds
   - board
   - background
   - 

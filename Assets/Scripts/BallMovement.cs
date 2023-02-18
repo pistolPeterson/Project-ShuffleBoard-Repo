@@ -9,6 +9,8 @@ public class BallMovement : MonoBehaviour   {
 
     public MovementState moveState;
     [SerializeField] private float minVelocity = 5.0f;
+    [SerializeField] private int obstacleLayerIndex;
+    [SerializeField] private int ballLayerIndex;
 
     private float ballVelocity;
 
@@ -16,6 +18,7 @@ public class BallMovement : MonoBehaviour   {
     {
         moveState = MovementState.MOVING;
         rb2d = GetComponent<Rigidbody2D>();
+        Physics2D.IgnoreLayerCollision(obstacleLayerIndex, ballLayerIndex);
     }
 
     void Update() {
