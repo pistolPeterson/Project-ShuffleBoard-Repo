@@ -46,7 +46,6 @@ public class RaeusBOMB : MonoBehaviour
   private void RaeusExplodes()
   {
     Debug.Log("Raeus: I EXPLODED!!! ");
-    particles.gameObject.SetActive(true);
     hitColliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
 
     foreach (Collider2D col in hitColliders)
@@ -67,6 +66,8 @@ public class RaeusBOMB : MonoBehaviour
 
 
     }
+    particles.gameObject.SetActive(true);
+
   }
 
   private void OnDrawGizmos()
