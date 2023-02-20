@@ -22,7 +22,11 @@ public class GameManager : MonoBehaviour {
     public UnityEvent OnBallSpawn;
     [SerializeField] private GameObject spawnPos;
     [SerializeField] private List<GameObject> ballsShot = new List<GameObject>();
+    
+    //the ball in the prefabs folder 
     [SerializeField] private GameObject spawnBallPref;
+    //the ball thats on the scenee 
+    [SerializeField] private GameObject startingBall;
     private GameObject currentBall;
     [SerializeField] private Color32 defaultBallColor;
     [SerializeField] private Color32 ballStopColor;
@@ -33,7 +37,7 @@ public class GameManager : MonoBehaviour {
     // Start is called before the first frame update
     void Start()    {
         isGameStarted = false;
-        currentBall = spawnBallPref;
+        currentBall = startingBall;
     }
 
     // Update is called once per frame

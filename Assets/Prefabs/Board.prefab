@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 2817295538299068412}
   m_Layer: 14
   m_Name: 'bottom boundary '
-  m_TagString: Untagged
+  m_TagString: BoardBoundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1278,7 +1278,7 @@ GameObject:
   - component: {fileID: 2817295539297235926}
   m_Layer: 14
   m_Name: top boundary
-  m_TagString: Untagged
+  m_TagString: BoardBoundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1717,7 +1717,7 @@ GameObject:
   - component: {fileID: 2817295539814259672}
   m_Layer: 14
   m_Name: right boundary
-  m_TagString: Untagged
+  m_TagString: BoardBoundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2013,7 +2013,7 @@ GameObject:
   - component: {fileID: 2817295539975654669}
   m_Layer: 14
   m_Name: left boundary
-  m_TagString: Untagged
+  m_TagString: BoardBoundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
