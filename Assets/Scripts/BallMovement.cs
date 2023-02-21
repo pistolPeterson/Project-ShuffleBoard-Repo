@@ -14,6 +14,7 @@ public class BallMovement : MonoBehaviour   {
 
     private float ballVelocity;
 
+    [SerializeField] private BallAudio ballAudio;
     void Start() 
     {
         moveState = MovementState.MOVING;
@@ -46,6 +47,8 @@ public class BallMovement : MonoBehaviour   {
     {
         rb2d.AddForce((newInputForce * forcePower), ForceMode2D.Impulse);
         moveState = MovementState.MOVING;
+        ballAudio.PlayBallHitSfx(newInputForce.magnitude);
+        
     }
     
   
