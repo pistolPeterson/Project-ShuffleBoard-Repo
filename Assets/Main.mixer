@@ -21,6 +21,25 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &-7178367943521210858
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Gameplay UI
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 3cfe0c8c86f24b7498ea8a2c11978aba
+  m_Children: []
+  m_Volume: 1e391fd3a2f5a6141900314b7be17607
+  m_Pitch: cc8f6bb2f73cad84a86afad050a1e9dc
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -873395249360822394}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &-5138833568056601110
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -54,6 +73,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-873395249360822394
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 9a0eb36ba5f11bd49a4c4f24701d9c61
+  m_EffectName: Attenuation
+  m_MixLevel: 45b92214689b798489b795c4d6f3fc01
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -80,6 +113,7 @@ AudioMixerController:
     - 408f19225efbae34a85104c0205b57af
     - 33dbd95a046cd6143abff6e8e259c1aa
     - a0d75255d01ce704d951a095fcb8ddc9
+    - 3cfe0c8c86f24b7498ea8a2c11978aba
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -127,7 +161,8 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: f8b7182a9f6bc4c47b2d2345dab6835b
-  m_FloatValues: {}
+  m_FloatValues:
+    1e391fd3a2f5a6141900314b7be17607: -4.9356413
   m_TransitionOverrides: {}
 --- !u!243 &283881350440679042
 AudioMixerGroupController:
@@ -140,6 +175,7 @@ AudioMixerGroupController:
   m_GroupID: b2c9361d4b63088438b003055a1b2e9f
   m_Children:
   - {fileID: 1148439771095441574}
+  - {fileID: -7178367943521210858}
   m_Volume: 3a7a9bd75d52c84419637ba67241d2f6
   m_Pitch: 5e6d44f12f20c4547abe24186c95060a
   m_Send: 00000000000000000000000000000000
