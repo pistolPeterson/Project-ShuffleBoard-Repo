@@ -10,7 +10,7 @@ public class GameplayUIAudio : MonoBehaviour
    [SerializeField] private AudioClip positiveScoreSfx;
    [SerializeField] private AudioClip negativeScoreSfx;
    [SerializeField] private AudioClip gameOverAlarm;
-
+   [SerializeField] private AudioClip warningSFX;
    private GameManager gameManager; 
 
    private void Awake()
@@ -35,6 +35,11 @@ public class GameplayUIAudio : MonoBehaviour
       source.PlayOneShot(gameOverAlarm);
    }
 
+   public void PlayWarningSound()
+   {
+      source.PlayOneShot(warningSFX);
+   }
+   
    public void PlayAudioBasedOnScore(int score)
    {
       if (score == 0)
