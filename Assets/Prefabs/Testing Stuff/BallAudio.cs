@@ -9,7 +9,7 @@ public class BallAudio : MonoBehaviour
     [SerializeField] private AudioSource ballHitSource;
     [SerializeField] private AudioClip ballCollisionSfx;
     [SerializeField] private AudioClip ballHitSfx;
-
+    [SerializeField] private AudioClip ballCollisionObstacleSfx;
 
     private void Awake()
     {
@@ -47,7 +47,7 @@ public class BallAudio : MonoBehaviour
         ballHitSource.PlayOneShot(ballHitSfx);
     }
 
-    public void PlayBallCollisionSfx(ImpactLevel impactLevel, BallLocation ballLocation)
+    public void PlayBallCollisionSfx(ImpactLevel impactLevel, BallLocation ballLocation, bool isObstacle)
     {
         //how loud to play
         switch (impactLevel)
@@ -78,6 +78,9 @@ public class BallAudio : MonoBehaviour
             
            
         }
-        collisionAudioSource.PlayOneShot(ballCollisionSfx);
+        if(!isObstacle)
+            collisionAudioSource.PlayOneShot(ballCollisionSfx);
+        else 
+            collisionAudioSource.PlayOneShot(ballCollisionObstacleSfx);
     }
 }
