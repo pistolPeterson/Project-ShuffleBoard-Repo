@@ -25,19 +25,21 @@ public class BallCollisionPolish : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-       
+        var rb = GetComponent<Rigidbody2D>();
+        DetermineBallImpact(rb.velocity.magnitude);
+        DetermineLocation();
+        
         if (col.gameObject.CompareTag("BoardBoundary"))
         {
-           
-
             particles.Emit(50);
-            var rb = GetComponent<Rigidbody2D>();
             
-           DetermineBallImpact(rb.velocity.magnitude);
-           DetermineLocation();
-
-           ballAudio.PlayBallCollisionSfx(ballImpact, ballLocation);
+           ballAudio.PlayBallCollisionSfx(ballImpact, ballLocation, false);
         }
+        else if (col.gameObject.CompareTag("Obstacle"))
+        {
+            ballAudio.PlayBallCollisionSfx(ballImpact, ballLocation, true);
+        }
+        
     }
 
     private void DetermineBallImpact(float vel)

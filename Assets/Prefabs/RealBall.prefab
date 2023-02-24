@@ -179,6 +179,8 @@ MonoBehaviour:
   ballHitSource: {fileID: 9207512513067686052}
   ballCollisionSfx: {fileID: 8300000, guid: f29e61ec2a709b649bc37194a88ff86e, type: 3}
   ballHitSfx: {fileID: 8300000, guid: d0c11eeeffd341448b3c9845fc476f10, type: 3}
+  ballCollisionObstacleSfx: {fileID: 8300000, guid: 6f4e5d43d24fd364c81c1ab4459d1b58,
+    type: 3}
 --- !u!1 &6708114345221635980
 GameObject:
   m_ObjectHideFlags: 0

@@ -1457,18 +1457,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1277631771}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1272946342 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6329720984719697014, guid: 1adee5be5b7e87f4faf05e9bc5df5f1c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1277631771}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1272946340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e951bffff758844488580d2ec4bb75f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1277631771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2434,7 +2422,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 993113322}
-  ballMovement: {fileID: 1272946342}
   isGameStarted: 0
   gameOver: 0
   OnGameOver:
@@ -2445,7 +2432,9 @@ MonoBehaviour:
       m_Calls: []
   spawnPos: {fileID: 1018416148}
   ballsShot: []
-  spawnBallPref: {fileID: 1272946340}
+  spawnBallPref: {fileID: 6708114345221635980, guid: 1adee5be5b7e87f4faf05e9bc5df5f1c,
+    type: 3}
+  startingBall: {fileID: 1272946340}
   defaultBallColor:
     serializedVersion: 2
     rgba: 4288531607

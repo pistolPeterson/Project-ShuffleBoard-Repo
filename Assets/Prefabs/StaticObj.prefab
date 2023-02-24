@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7899084655225077908}
   m_Layer: 12
   m_Name: StaticObj
-  m_TagString: Ball
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7,
+    type: 3}
   m_Color: {r: 0.5281684, g: 0.7830189, b: 0.6695871, a: 1}
   m_FlipX: 0
   m_FlipY: 0

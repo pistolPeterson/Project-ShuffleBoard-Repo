@@ -15,7 +15,6 @@ using UnityEngine.Events;
 public class GameManager : MonoBehaviour {
 
     [SerializeField] private Timer timer;
-    [SerializeField] private BallMovement ballMovement;
     [HideInInspector] public bool isGameStarted = false;
     [HideInInspector] public bool gameOver = false;
     public UnityEvent OnGameOver;
@@ -42,7 +41,9 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (timer.GetTimerRunning() && !isGameStarted) {
+        if (timer.GetTimerRunning() && !isGameStarted)
+        {
+            BallMovement ballMovement = currentBall.gameObject.GetComponent<BallMovement>();
             ballMovement.moveState = MovementState.MOVING; 
             // if in MOVING state, IT CANNOT BE MOVED AGAIN. IF STAtE IS NOT_MOVING MEANS IT CAN BE MOVED.
             // in DragLine ^

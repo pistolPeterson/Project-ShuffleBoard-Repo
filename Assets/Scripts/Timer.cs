@@ -11,6 +11,8 @@ public class Timer : MonoBehaviour {
     private bool timerRunning = false;
     private bool gameOver = false;
 
+    private bool warningSoundTriggered = false; 
+    
     // UI stuf : COLORS INITIALIZED ARE DEFAULT. Can be changed in inspector
     [SerializeField] private Color32 getReadyColor = new Color32(125, 205, 209, 255);
     [SerializeField] private Color32 timerColor = new Color32(122, 62, 161, 255);
@@ -32,6 +34,17 @@ public class Timer : MonoBehaviour {
             {
                 TimerColor(timerColor);
             }
+            
+            //code to make audio play when there is about 10 secounsd left 
+            if (timeInSeconds < 13f && !warningSoundTriggered)
+            {
+                warningSoundTriggered = true;
+               var guia = FindObjectOfType<GameplayUIAudio>();
+               if(guia)
+                   guia.PlayWarningSound();
+            }
+            
+            
 
             UpdateTimerText();
         }
