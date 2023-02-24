@@ -12,8 +12,10 @@ public class BallMovement : MonoBehaviour   {
     [SerializeField] private int obstacleLayerIndex;
     [SerializeField] private int ballLayerIndex;
 
+
     private float ballVelocity;
 
+    [SerializeField] private BallAudio ballAudio;
     void Start() 
     {
         moveState = MovementState.MOVING;
@@ -35,6 +37,7 @@ public class BallMovement : MonoBehaviour   {
                     FindObjectOfType<GameManager>().BallState(gameObject);
                     GetComponent<BallValue>().DetermineScore();
                     GetComponent<BallValue>().CallUpdateScore();
+                    PostGameplayAudio();
                 }
                 moveState = MovementState.NOT_MOVING;
 
@@ -42,15 +45,28 @@ public class BallMovement : MonoBehaviour   {
             }
         } 
     }
+
+   
     public void MoveBall(Vector3 newInputForce)
     {
         rb2d.AddForce((newInputForce * forcePower), ForceMode2D.Impulse);
         moveState = MovementState.MOVING;
+        ballAudio.PlayBallHitSfx(newInputForce.magnitude);
+        
     }
     
   
     
-    //when you enter a trigger
+    private void PostGameplayAudio()
+    {
+
+        GameplayUIAudio gameplayUIAudio = FindObjectOfType<GameplayUIAudio>();
+        if(gameplayUIAudio == null) return;
+
+        var score = GetComponent<BallValue>().GetBallValue();
+        gameplayUIAudio.PlayAudioBasedOnScore(score);
+        
+    }
     
 }
 //state machine
