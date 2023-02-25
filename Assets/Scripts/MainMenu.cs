@@ -21,8 +21,13 @@ public class MainMenu : MonoBehaviour
         creditsPanel.gameObject.SetActive(false);
 
     }
-    
-    
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+
     public void OpenLevelPanel()
     {
         levelSelectPanel.gameObject.SetActive(true);

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,16 +26,20 @@ public class GameManager : MonoBehaviour {
     //the ball in the prefabs folder 
     [SerializeField] private GameObject spawnBallPref;
     //the ball thats on the scenee 
-    [SerializeField] private GameObject startingBall;
+ private GameObject startingBall;
     private GameObject currentBall;
     private Color32 defaultBallColor = new Color32(255, 255, 255, 255);
     [SerializeField] private Color32 ballStopColor;
+    [SerializeField] private GameObject levelSelectPanel;
 
+    private bool isPaused = false;
     //the current level number that the player is on, statistics system uses it to write stats 
     public int CurrentLevelNumber = 1;
 
     // Start is called before the first frame update
     void Start()    {
+        levelSelectPanel.gameObject.SetActive(false);
+
         InitBall();
         isGameStarted = false;
     }
@@ -52,6 +57,23 @@ public class GameManager : MonoBehaviour {
         if (gameOver) {
             StopBall();
         }
+        
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (gameOver) return;
+            isPaused = !isPaused;
+
+            if (isPaused)
+            {
+                Paused();
+                levelSelectPanel.gameObject.SetActive(true);
+            }
+            else
+            {
+                Resume();
+                levelSelectPanel.gameObject.SetActive(false);
+            }
+        }
     }
     public void InitBall() {
         int tempIndx = BallSelectData.Instance.GetSelectBallIndex();
@@ -66,6 +88,7 @@ public class GameManager : MonoBehaviour {
         FinalScore();
         isGameStarted = false;
         gameOver = true;
+        levelSelectPanel.gameObject.SetActive(true);
     }
     public void StopBall() {
         /*
@@ -109,4 +132,17 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+  
+
+    public void Paused()
+    {
+        Debug.Log("we pauseing");
+        Time.timeScale = 0;
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1;
+
+    }
 }
