@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
     //the ball thats on the scenee 
     [SerializeField] private GameObject startingBall;
     private GameObject currentBall;
-    [SerializeField] private Color32 defaultBallColor;
+    private Color32 defaultBallColor = new Color32(255, 255, 255, 255);
     [SerializeField] private Color32 ballStopColor;
 
     //the current level number that the player is on, statistics system uses it to write stats 
@@ -35,8 +35,8 @@ public class GameManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start()    {
+        InitBall();
         isGameStarted = false;
-        currentBall = startingBall;
     }
 
     // Update is called once per frame
@@ -52,6 +52,13 @@ public class GameManager : MonoBehaviour {
         if (gameOver) {
             StopBall();
         }
+    }
+    public void InitBall() {
+        int tempIndx = BallSelectData.Instance.GetSelectBallIndex();
+        startingBall = BallSelectData.Instance.GetBallPrefab(tempIndx);
+        GameObject tempBall = Instantiate(startingBall, spawnPos.transform);   
+        currentBall = tempBall;
+        spawnBallPref = startingBall;
     }
     public void PostGameOverEvent() {
         OnGameOver?.Invoke();

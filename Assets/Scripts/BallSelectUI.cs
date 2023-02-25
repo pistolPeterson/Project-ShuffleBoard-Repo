@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class BallSelectUI : MonoBehaviour
 {
-    [SerializeField] Sprite[] ballSprites;
-    [SerializeField] Image image;
-    int index = 0;
+    [SerializeField] private Sprite[] ballSprites;
+    [SerializeField] private Image image;
+    private int index = 0;
     public void BackSelect() {
         if (index <= 0) {
             index = ballSprites.Length - 1;
         } else {
             index--;
         }
-        image.sprite = ballSprites[index];
+        SetImageNIndex();
     }
     public void NextSelect() {
         if (index >= ballSprites.Length-1) {
@@ -23,6 +23,10 @@ public class BallSelectUI : MonoBehaviour
         else {
             index++;
         }
+        SetImageNIndex();
+    }
+    public void SetImageNIndex() {
         image.sprite = ballSprites[index];
+        BallSelectData.Instance.SetBallPrefIndex(index);
     }
 }

@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class BallSelectData : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject[] ballPrefabs;
+    public static BallSelectData Instance;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Awake() {
+        if (Instance == null) {
+            Instance = this;
+        } else {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
+    // Start is called before the first frame update
+    void Start() {
+        PlayerPrefs.SetInt("SelectedBallIndex", 0);        
+    }
+    public int GetSelectBallIndex() {
+        return PlayerPrefs.GetInt("SelectedBallIndex");
+    }
+    public GameObject GetBallPrefab(int index) {
+        return ballPrefabs[index];
+    }
+    public void SetBallPrefIndex(int newIndex) {
+        PlayerPrefs.SetInt("SelectedBallIndex", newIndex);
     }
 }
