@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class GameplayUIAudio : MonoBehaviour
 {
@@ -63,5 +64,11 @@ public class GameplayUIAudio : MonoBehaviour
       {
          SceneManager.LoadScene(0);
       }
+   }
+   
+   private void RandomizeAudio()
+   {
+      source.volume = Random.Range(0.75f, 1.0f);
+      source.pitch = Random.Range(0.9f, 1.1f);
    }
 }

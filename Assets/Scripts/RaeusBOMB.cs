@@ -16,6 +16,7 @@ public class RaeusBOMB : MonoBehaviour
     [SerializeField] private float explosionDelay = 2.5f;
     [SerializeField] private float respawnDelay = 2.5f;
     [SerializeField] private ParticleSystem particles;
+    [SerializeField] private RaeusBombAudio rBombAudio;
     [SerializeField] private Sprite defaultSprite;
     [SerializeField] private Sprite spriteAfterExploding;
 
@@ -45,7 +46,9 @@ public class RaeusBOMB : MonoBehaviour
 
   private IEnumerator DelayThenExplode()
   {
+    rBombAudio.PlayWarningSound();
     yield return new WaitForSeconds(explosionDelay);
+    rBombAudio.PlayExplosion();
     RaeusExplodes();
         //Debug.Log("Raeus: I EXPLODED!!! ");
         sr.sprite = spriteAfterExploding;
