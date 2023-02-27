@@ -4,29 +4,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// war crimes were commited by Rae Industries
-///
-///
-/// Peterson N. : they threatened to kill me I had to make this monstrosity
-/// 
+/// bomb go boom
 /// </summary>
 public class RaeusBOMB : MonoBehaviour
 {
-  private Collider2D[] hitColliders = null;
+    private Collider2D[] hitColliders = null;
+    private SpriteRenderer sr;
 
-  [SerializeField][Range(50000f, 150000f)] private float explosionPower = 75000f;
-  [SerializeField][Range(75f, 750f)] private float explosionRadius = 200f;
-  [SerializeField] private float explosionDelay = 2.5f;
-  [SerializeField] private float respawnDelay = 2.5f;
-  [SerializeField] private ParticleSystem particles; 
+    [SerializeField][Range(50000f, 150000f)] private float explosionPower = 75000f;
+    [SerializeField][Range(75f, 750f)] private float explosionRadius = 200f;
+    [SerializeField] private float explosionDelay = 2.5f;
+    [SerializeField] private float respawnDelay = 2.5f;
+    [SerializeField] private ParticleSystem particles;
+    [SerializeField] private Sprite defaultSprite;
+    [SerializeField] private Sprite spriteAfterExploding;
 
-  private bool raeusGoingThroughIt = false;
+    private bool raeusGoingThroughIt = false;
 
-  private void Start()
-  {
-    particles = GetComponentInChildren<ParticleSystem>();
-    particles.Stop();
-  }
+  private void Start()  {
+        particles = GetComponentInChildren<ParticleSystem>();
+        particles.Stop();
+        sr = GetComponentInChildren<SpriteRenderer>();
+    }
 
 
   private void Update()
@@ -48,21 +47,25 @@ public class RaeusBOMB : MonoBehaviour
   {
     yield return new WaitForSeconds(explosionDelay);
     RaeusExplodes();
-    yield return new WaitForSeconds(respawnDelay);
+        //Debug.Log("Raeus: I EXPLODED!!! ");
+        sr.sprite = spriteAfterExploding;
+
+        yield return new WaitForSeconds(respawnDelay);
     //play particle effect to show it respawning 
     //show ball 
     raeusGoingThroughIt = false;
     particles.Stop();
-  }
+        sr.sprite = defaultSprite;
 
-  private void RaeusExplodes()
+
+    }
+
+    private void RaeusExplodes()
   {
-   // Debug.Log("Raeus: I EXPLODED!!! ");
-   particles.Emit(100);
-
+     particles.Emit(100);
     hitColliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
 
-    foreach (Collider2D col in hitColliders)
+        foreach (Collider2D col in hitColliders)
     {
       BallMovement ball = col.GetComponent<BallMovement>();
       if (!ball) return;
