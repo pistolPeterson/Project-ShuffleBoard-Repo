@@ -323,7 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 922168170820848398}
   raeusWarningSfx: {fileID: 8300000, guid: b2013c3225c19114c90ae68e0d23993f, type: 3}
-  raeusEXPLODESsfx: {fileID: 8300000, guid: 888193e8b9c03514b935ec1c70356d18, type: 3}
+  raeusEXPLODESsfx: {fileID: 8300000, guid: 849337c93d9c3bb4a9dc2987824acdcb, type: 3}
 --- !u!1001 &8403118919324751922
 PrefabInstance:
   m_ObjectHideFlags: 0
