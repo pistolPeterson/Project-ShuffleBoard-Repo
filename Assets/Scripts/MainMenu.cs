@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,14 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject creditsPanel;
     [SerializeField] private GameObject levelSelectPanel;
 
+
+    private void Start()
+    {
+        if (Screen.fullScreen == false)
+        {
+            Screen.fullScreen = true;
+        }
+    }
 
     public void OpenCreditsPanel()
     {
