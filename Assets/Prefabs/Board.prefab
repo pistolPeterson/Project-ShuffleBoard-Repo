@@ -50,6 +50,7 @@ MonoBehaviour:
   negativeScoreSfx: {fileID: 8300000, guid: aabbf832a1e89c8458cea04e397029af, type: 3}
   gameOverAlarm: {fileID: 8300000, guid: 3e07c83755e909b4591bd8ed0d61985c, type: 3}
   warningSFX: {fileID: 8300000, guid: 9bd00741c3b094d42a3b2996d70b06b0, type: 3}
+  rdySetGoSFX: {fileID: 8300000, guid: da0d38bdd13539647a4ec4021191ad0a, type: 3}
 --- !u!1 &2817295538105356450
 GameObject:
   m_ObjectHideFlags: 0

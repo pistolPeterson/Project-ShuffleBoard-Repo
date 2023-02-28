@@ -12,6 +12,7 @@ public class GameplayUIAudio : MonoBehaviour
    [SerializeField] private AudioClip negativeScoreSfx;
    [SerializeField] private AudioClip gameOverAlarm;
    [SerializeField] private AudioClip warningSFX;
+   [SerializeField] private AudioClip rdySetGoSFX;
    private GameManager gameManager; 
 
    private void Awake()
@@ -19,6 +20,12 @@ public class GameplayUIAudio : MonoBehaviour
       gameManager = FindObjectOfType<GameManager>();
       gameManager.OnGameOver.AddListener(PlayGameOverAlarmSfx);
       Debug.Log("Btw there is a reset scene if press r  and t ");
+     
+   }
+
+   private void Start()
+   {
+      source.PlayOneShot(rdySetGoSFX);   
    }
 
    public void PlayPosScoreSfx()
@@ -38,9 +45,17 @@ public class GameplayUIAudio : MonoBehaviour
 
    public void PlayWarningSound()
    {
+      source.volume = 0.5f;
       source.PlayOneShot(warningSFX);
+      StartCoroutine(waitThenPutVolUp());
    }
-   
+
+   private IEnumerator waitThenPutVolUp()
+   {
+      yield return new WaitForSeconds(1.5f);
+source.volume = 1.0f;
+   }
+
    public void PlayAudioBasedOnScore(int score)
    {
       if (score == 0)

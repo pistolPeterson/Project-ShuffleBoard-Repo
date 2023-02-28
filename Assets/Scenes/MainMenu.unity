@@ -883,6 +883,41 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 654202674}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &654202676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 678518597820276028, guid: 0048f90f7efb9a84eb20347d965f84ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 654202674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &654202677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654202676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1534543969}
+          m_TargetAssemblyTypeName: LevelPanelAudio, Assembly-CSharp
+          m_MethodName: PlaySelectLevelsfx
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &679298598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,6 +1224,41 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 723505900}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &723505902 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 678518597820276028, guid: 0048f90f7efb9a84eb20347d965f84ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 723505900}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &723505903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723505902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1534543969}
+          m_TargetAssemblyTypeName: LevelPanelAudio, Assembly-CSharp
+          m_MethodName: PlaySelectLevelsfx
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &749162466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1359,6 +1429,41 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 749162466}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &749162468 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 678518597820276028, guid: 0048f90f7efb9a84eb20347d965f84ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 749162466}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &749162469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749162468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1534543969}
+          m_TargetAssemblyTypeName: LevelPanelAudio, Assembly-CSharp
+          m_MethodName: PlaySelectLevelsfx
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &753935094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1529,6 +1634,41 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 753935094}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &753935096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 678518597820276028, guid: 0048f90f7efb9a84eb20347d965f84ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 753935094}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &753935097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753935096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1534543969}
+          m_TargetAssemblyTypeName: LevelPanelAudio, Assembly-CSharp
+          m_MethodName: PlaySelectLevelsfx
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &884774221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1762,6 +1902,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1198689973}
         m_TargetAssemblyTypeName: BallSelectUI, Assembly-CSharp
         m_MethodName: NextSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1534543969}
+        m_TargetAssemblyTypeName: LevelPanelAudio, Assembly-CSharp
+        m_MethodName: PlaySelectBAllSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2039,6 +2191,41 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 977182933}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &977182935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 678518597820276028, guid: 0048f90f7efb9a84eb20347d965f84ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 977182933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &977182936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977182935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1534543969}
+          m_TargetAssemblyTypeName: LevelPanelAudio, Assembly-CSharp
+          m_MethodName: PlaySelectLevelsfx
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &982418538
 GameObject:
   m_ObjectHideFlags: 0
@@ -2976,6 +3163,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1534543969}
+        m_TargetAssemblyTypeName: LevelPanelAudio, Assembly-CSharp
+        m_MethodName: PlaySelectBAllSfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1423384616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3083,6 +3282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1534543968}
+  - component: {fileID: 1534543969}
   m_Layer: 5
   m_Name: Level Select Panel
   m_TagString: Untagged
@@ -3107,6 +3307,7 @@ RectTransform:
   - {fileID: 1198689972}
   - {fileID: 354695152}
   - {fileID: 1900865578}
+  - {fileID: 1820797771}
   m_Father: {fileID: 1833320614}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3115,6 +3316,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -111}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1534543969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534543967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 258633042e520a344bb6ca422036f0bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 1820797772}
+  selectBallSfx: {fileID: 8300000, guid: 322ac845d2da70e43affb9eb2948bae4, type: 3}
+  selectLevelSfx: {fileID: 8300000, guid: cb816416d2b1e21469625178862e2bf6, type: 3}
 --- !u!1 &1754484243
 GameObject:
   m_ObjectHideFlags: 0
@@ -3250,6 +3466,140 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754484243}
   m_CullTransparentMesh: 1
+--- !u!1 &1820797770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1820797771}
+  - component: {fileID: 1820797772}
+  m_Layer: 5
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1820797771
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820797770}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1534543968}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!82 &1820797772
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820797770}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 3544898009990626183, guid: a510b9cf44cd42d47ba267fbf7bd948b,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1833320610
 GameObject:
   m_ObjectHideFlags: 0
@@ -3841,6 +4191,41 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1915684206}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1915684208 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 678518597820276028, guid: 0048f90f7efb9a84eb20347d965f84ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 1915684206}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1915684209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915684208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1534543969}
+          m_TargetAssemblyTypeName: LevelPanelAudio, Assembly-CSharp
+          m_MethodName: PlaySelectLevelsfx
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1931698952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4011,6 +4396,41 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1931698952}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1931698954 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 678518597820276028, guid: 0048f90f7efb9a84eb20347d965f84ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 1931698952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1931698955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931698954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1534543969}
+          m_TargetAssemblyTypeName: LevelPanelAudio, Assembly-CSharp
+          m_MethodName: PlaySelectLevelsfx
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2027406299
 GameObject:
   m_ObjectHideFlags: 0
@@ -4476,3 +4896,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0048f90f7efb9a84eb20347d965f84ae, type: 3}
+--- !u!1 &678518596721366553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 678518597820276028, guid: 0048f90f7efb9a84eb20347d965f84ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 678518596721366552}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &678518596721366554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678518596721366553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1534543969}
+          m_TargetAssemblyTypeName: LevelPanelAudio, Assembly-CSharp
+          m_MethodName: PlaySelectLevelsfx
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
