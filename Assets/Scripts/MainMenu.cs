@@ -14,10 +14,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        if (Screen.fullScreen == false)
-        {
-            Screen.fullScreen = true;
-        }
+      
     }
 
     public void OpenCreditsPanel()
